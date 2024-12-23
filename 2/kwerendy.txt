@@ -1,0 +1,14 @@
+SELECT imie, nazwisko, punkty FROM klienci ORDER BY 3 DESC LIMIT 3
+
+SELECT nazwa, COUNT(klienci.id) FROM typy
+INNER JOIN klienci
+ON typy.id = klienci.Typy_id
+GROUP BY typy.id;
+
+SELECT zdjecie, imie, opinia FROM klienci
+INNER JOIN opinie
+ON klienci.id = opinie.Klienci_id
+WHERE Typy_id = 2 || Typy_id = 3
+
+ALTER TABLE klienci
+ADD COLUMN adres varchar(50)
