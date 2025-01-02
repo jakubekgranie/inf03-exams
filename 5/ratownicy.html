@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zespoły ratownicze</title>
+    <link href="styl3.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2>Dodanie zespołu ratowniczego</h2>
+    </header>
+    <header>
+        <p>Kontakt:<br> 022 222 11 333</p>
+    </header>
+    <header>
+        <img src="obraz.jpg" alt="Ratownicy">
+    </header>
+    <main>
+        <h3>Dodaj nowy zespół</h3>
+        <form action="dodanie.php" method="post">
+            Numer karetki:
+            <br>
+            <input type="number" name="nrKaretki">
+            <br>
+            Imię i nazwisko pierwszego ratownika:
+            <br>
+            <input type="text" name="ratownik1">
+            <br>
+            Imię i nazwisko drugiego ratownika:
+            <br>
+            <input type="text" name="ratownik2">
+            <br>
+            Imię i nazwisko trzeciego ratownika:
+            <br>
+            <input type="text" name="ratownik3">
+            <br>
+            <button type="reset">CZYŚĆ</button> <button type="submit">DODAJ</button>
+        </form>
+    </main>
+    <footer>
+        <a href="kwerendy.txt">Zobacz kwerendy</a>
+    </footer>
+    <footer>
+        <h5>Przypominamy numery alarmowe</h5>
+        <ol>
+            <li>112</li>
+            <li>999</li>
+        </ol>
+    </footer>
+    <footer>
+        <p>Autor<br>jakubekgranie on GitHub</p>
+    </footer>
+</body>
+</html>
