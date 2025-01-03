@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogotowie komputerowe</title>
+    <link href="styl.css" rel="stylesheet">
+    <link href="favicon.png" rel="icon">
+    <script type="text/javascript">
+        
+        window.onload = () => {
+            function przesyl() {
+            if(!document.getElementById("output")){
+                const kontenerDanych = document.createElement("p");
+                kontenerDanych.id = "output";
+                document.getElementById("main-formularz").appendChild(kontenerDanych);
+            }
+            console.log(document.getElementById("imie").innerHTML);
+            document.getElementById("output").innerHTML = document.getElementById("imie").value + " " + document.getElementById("nazwisko").value + "<br>" + document.getElementById("mail").value.toLocaleLowerCase() + "<br>Usługa: " + document.getElementById("usluga").value;
+        }
+            document.getElementById("send").addEventListener("click", (e) => {e.preventDefault(); przesyl();});
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <header>
+            <img src="animacja.gif">
+        </header>
+        <nav>
+            <a href="index.html">O nas</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <main>
+
+        </main>
+        <main id="main-formularz">
+            <h3>Formularz kontaktowy</h3>
+            <table>
+                <form method="post">
+                    <tr>
+                        <td>
+                            Imię: 
+                        </td>
+                        <td>
+                            <input type="text" id="imie">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nazwisko: 
+                        </td>
+                        <td>
+                            <input type="text" id="nazwisko">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E-mail: 
+                        </td>
+                        <td>
+                            <input type="email" id="mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Usługa:
+                        </td>
+                        <td>
+                            <select id="usluga">
+                                <option value="naprawa komputera">naprawa komputera</option>
+                                <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                                <option value="problemy z oprogramowaniem">problemy z oprogramowaniem</option>
+                                <option value="konfiguracja sieci LAN">konfiguracja sieci LAN</option>
+                                <option value="inne">inne</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="checkbox" id="wyslijkopie" checked> Wyślij kopię wiadomości
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <button type="reset">Resetuj</button>
+                            <button type="submit" id="send">Prześlij</button>
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </main>
+        <main>
+            
+        </main>
+        <footer>
+            <p>Autor strony: <b>jakubekgranie on GitHub</b></p>
+        </footer>
+    </section>
+</body>
+</html>
