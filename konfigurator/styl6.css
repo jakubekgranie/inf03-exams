@@ -1,0 +1,49 @@
+html{
+    font-family: Georgia;
+}
+section:nth-of-type(1){
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+}
+#prawa{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: scroll;
+}
+footer{
+    background-color: dimgray;
+    color: white;
+}
+#prawa *:not(p){
+    float: left;
+}
+#prawa p{
+    clear: both;
+}
+p{
+    padding: 10px;
+}
+img{
+    padding: 10px;
+    border: solid 1px white;
+}
+button:nth-of-type(1){
+    background-color: indigo;
+}
+button:nth-of-type(2){
+    background-color: steelblue;
+}
+button:nth-of-type(3){
+    background-color: olive;
+}
+
+section{
+    float: left;
+}
+footer{
+    clear: both;
+}

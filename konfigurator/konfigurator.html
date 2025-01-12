@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Style w JavaScript</title>
+    <link href="styl6.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", () =>
+        {
+            const przyciski = document.getElementsByTagName("button"), prawa = document.getElementById("prawa");
+            for(let i = 0; i < przyciski.length; i++)
+                przyciski[i].addEventListener("click", () => {prawa.style.backgroundColor = przyciski[i].innerHTML});
+            const listenery = [
+                                ["kolorCzcionki", "rozmiarCzcionki", "ramka"], 
+                                ["click", "focusout", "click"], 
+                                [
+                                    () => {prawa.style.color = document.getElementById("kolorCzcionki").value}, 
+                                    () => {prawa.style.fontSize = document.getElementById("rozmiarCzcionki").value}, 
+                                    () => {
+                                            const obraz = document.getElementById("obraz");
+                                            if(!document.querySelector(`[id=${listenery[0][2]}]:checked`))
+                                                obraz.style.border = "none";
+                                            else
+                                                obraz.style.border = null;
+                                        }
+                                ]
+                              ];
+            for(let i = 0; i < listenery[0].length; i++)
+                document.getElementById(listenery[0][i]).addEventListener(listenery[1][i], listenery[2][i]);
+            const radio = document.querySelectorAll("[type='radio']");
+            console.log(radio);
+            for(let i = 0; i < radio.length; i++)
+                radio[i].addEventListener("click", () => {document.getElementById("lista").style.listStyleType = radio[i].value});
+        }); 
+    </script>
+</head>
+<body>
+    <section>
+        <h1>Konfigurator stylu</h1>
+        <p>
+            Podaj kolor tła
+            <br>
+            <button>Indigo</button>
+            <button>SteelBlue</button>
+            <button>Olive</button>
+        </p>
+        <p>
+            Podaj kolor czcionki
+            <br>
+            <select id="kolorCzcionki">
+                <option value="White">White</option>
+                <option value="Tan">Tan</option>
+                <option value="Bisque">Bisque</option>
+                <option value="Plum">Plum</option>
+            </select>
+        </p>
+        <p>
+            Podaj rozmiar czcionki w procentach, np. 200%
+            <br>
+            <input type="text" id="rozmiarCzcionki" value="100%">
+        </p>
+        <p>
+            Czy rysunek ma mieć ramkę?
+            <br>
+            <input type="checkbox" id="ramka" checked> Rysuj ramkę
+        </p>
+        <p>
+            Jaki jest typ punktora listy?
+            <br>
+            <input type="radio" name="punktor" value="disc"> dysk<br>
+            <input type="radio" name="punktor" value="square"> kwadrat<br>
+            <input type="radio" name="punktor" value="circle"> okrąg
+        </p>
+    </section>
+    <section id="prawa">
+        <img src="gibraltar.jpg" id="obraz" alt="półwysep Gibraltar">
+        <ul id="lista">
+            <li>element 1</li><br>
+            <li>element 2</li><br>
+            <li>element 3</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <footer>
+        Autor: jakubekgranie on GitHub
+    </footer>
+</body>
+</html>
