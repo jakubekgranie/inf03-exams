@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nasze zdjęcia</title>
+    <link href="styl6.css" rel="stylesheet">
+    <script>
+        function najechanie(){
+            document.getElementById("maly-kot").src = "kot1-odbicie.jpg";
+        }
+        function odjechanie(idElementu){
+            document.getElementById("maly-kot").src = "kot1.jpg";
+        }
+        function klikniecie(idElementu){
+            odjechanie(idElementu);
+            document.getElementById("wybrany-kot").src = "kot1.jpg";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2>Nasze koty</h2>
+    </header>
+    <aside>
+        <h1>Wybierz</h1>
+        <ul>
+            <a href="pies.html"><li>Psy</li></a>
+            <a href="kot.html"><li>Koty</li></a>
+            <li>Konie</li>
+            <li>Rybki</li>
+            <li>Inne zdjęcia</li>
+        </ul>
+        <a href="index.html"><h5>Powrót do strony głównej</h5></a>
+    </aside>
+    <section>
+        <h2>Kliknij na zdjęcie</h2>
+        <img src="kot1.jpg" id="maly-kot" onclick="klikniecie()" onmouseover="najechanie()" onmouseout="odjechanie()" alt="koty">
+    </section>
+    <section>
+        <p><img src="kot1.jpg" id="wybrany-kot" alt="Wybrany kot"></p>
+    </section>
+    <footer>
+        Galerię zdjęć opracował: <strong>jakubekgranie on GitHub</strong> <!--Spytaj, czy można <strong>!-->
+    </footer>
+</body>
+</html>

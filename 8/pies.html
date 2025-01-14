@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nasze zdjęcia</title>
+    <link href="styl6.css" rel="stylesheet">
+    <script>
+        function najechanie(idElementu){
+            document.getElementById(idElementu).src = idElementu + "-odbicie.jpg";
+        }
+        function odjechanie(idElementu){
+            document.getElementById(idElementu).src = idElementu + ".jpg";
+        }
+        function klikniecie(idElementu){
+            odjechanie(idElementu);
+            document.getElementById("wybrany-pies").src = idElementu + ".jpg";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2>Nasze psy</h2>
+    </header>
+    <aside>
+        <h1>Wybierz</h1>
+        <ul>
+            <a href="pies.html"><li>Psy</li></a>
+            <a href="kot.html"><li>Koty</li></a>
+            <li>Konie</li>
+            <li>Rybki</li>
+            <li>Inne zdjęcia</li>
+        </ul>
+        <a href="index.html"><h5>Powrót do strony głównej</h5></a>
+    </aside>
+    <section>
+        <h2>Kliknij na zdjęcie</h2>
+        <img src="pies1.jpg" id="pies1" onclick="klikniecie('pies1')" onmouseover="najechanie('pies1')" onmouseout="odjechanie('pies1')" alt="psy">
+        <img src="pies2.jpg" id="pies2" onclick="klikniecie('pies2')" onmouseover="najechanie('pies2')" onmouseout="odjechanie('pies2')" alt="psy">
+        <img src="pies3.jpg" id="pies3" onclick="klikniecie('pies3')" onmouseover="najechanie('pies3')" onmouseout="odjechanie('pies3')" alt="psy">
+    </section>
+    <section>
+        <p><img src="pies2.jpg" id="wybrany-pies" alt="Wybrany pies"></p>
+    </section>
+    <footer>
+        Galerię zdjęć opracował: <strong>jakubekgranie on GitHub</strong> <!--Spytaj, czy można <strong>!-->
+    </footer>
+</body>
+</html>

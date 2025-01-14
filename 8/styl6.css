@@ -1,0 +1,52 @@
+html{
+    font-family: Garamond;
+    font-size: 110%;
+}
+header{
+    background-color: #965873;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+aside{
+    background-color: #965873;
+    color: white;
+    width: 30%;
+    height: 750px;
+}
+section:nth-of-type(1){
+    background-color: #AAC28A;
+    width: 70%;
+    height: 250px;
+    text-align: right;
+}
+section:nth-of-type(2){
+    background-color: #86A25F;
+    width: 70%;
+    height: 500px;
+    text-align: center;
+}
+footer{
+    background-color: #965873;
+    color: white;
+}
+a{
+    color: white;
+}
+section:nth-of-type(1) img{
+    width: 18%;
+    padding: 10px;
+}
+section:nth-of-type(2) img{
+    border: 6px dotted #965873;
+}
+section:nth-of-type(2) img:hover{
+    border-color: green;
+}
+
+aside, section{
+    float: left;
+}
+footer{
+    clear: both;
+}
